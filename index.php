@@ -4,7 +4,7 @@
 <head>
 <title>Welcome To EPRS</title>
 
-<link rel="stylesheet" href="style.css" media="all" />
+<link rel="stylesheet" href="index.css" media="all" />
 </head>
 
 <div class="c1">
