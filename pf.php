@@ -2,7 +2,7 @@
 <html>
 <body>
 <head>
-<title>Welcome To EPR System</title>
+<title>Welcome To EPRS</title>
 
 <link rel="stylesheet" href="style.css" media="all" />
 </head>
@@ -21,7 +21,7 @@
 
 <ul id="menu">
 
-  <li><a href="pf.php">HOME</a></li>
+  <li><a href="index.php">HOME</a></li>
   <li><a href="#news">SERVICES</a></li>
   <li><a href="user.php">LOG IN</a></li>
 <li><a href="usersingup.php">SING UP</a></li>
