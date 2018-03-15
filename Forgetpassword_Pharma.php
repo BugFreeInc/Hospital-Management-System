@@ -4,7 +4,7 @@
 <head>
 <title>Welcome To EPR System</title>
 
-<link rel="stylesheet" href="style.css" media="all" />
+<link rel="stylesheet" href="ForgetPass_D.css" media="all" />
 </head>
 
 <div class="c1">
@@ -21,9 +21,9 @@
 
 <ul id="menu">
 
-  <li><a href="pf.php">HOME</a></li>
+  <li><a href="index.php">HOME</a></li>
   <li><a href="#news">SERVICES</a></li>
-  <li><a href="user.php">LOG IN</a></li>
+  <li><a href="login.php">LOG IN</a></li>
 <li><a href="usersingup.php">SING UP</a></li>
 
   <li><a href="#about">ABOUT</a></li>
@@ -41,11 +41,10 @@
 <div class="h1">
 <h1>Forget Password Pharmacist </h1>
 </div>
-<form>
-<input type="text" placeholder="User Name" name="">
-<input type="email" placeholder="Email" name="">
-<input type="Text" placeholder="Owner Name" name="">
-<input type="button" value="Sumbit" name="">
+<form method="post" action="">
+<input type="text" placeholder="Govt. Reg-Number" name="Reg-Number">
+<input type="text" placeholder="Email" name="email">
+<input type="submit" value="Submit" name="button">
 
 </form>
 
@@ -54,7 +53,36 @@
 
 </div>
 </div>
+<?php  
 
+session_start();
+include "connection.php";
+if(isset($_POST['button'])) {
+   $Reg_Number=$_POST['Reg-Number'];
+   $email=$_POST['email'];
+   $_SESSION["email"] = $email;
+     $_SESSION["Reg_Number"] = $Reg_Number;
+
+ $query=("select * from pharmacy where RegNumber='$Reg_Number' and Email ='$email' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+
+if($row['RegNumber']==$Reg_Number && $row['Email']==$email && $row['RegNumber']!=null){
+	echo "<script>window.alert('Well Come ')</script>";
+	header("refresh:0;url=Forgetpassword_Pharma2.php");
+
+	}
+	else{
+		echo "<script>window.alert('Email Mismatch Or You Account is not Created')</script>";
+		
+		}
+
+
+}
+
+
+
+?>
 
 </body>
 

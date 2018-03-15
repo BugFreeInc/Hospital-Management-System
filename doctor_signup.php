@@ -4,7 +4,7 @@
 <head>
 <title>Welcome To EPR System</title>
 
-<link rel="stylesheet" href="Regipatient.css" media="all" />
+<link rel="stylesheet" href="doctor_signup.css" media="all" />
 </head>
 
 <div class="c1">
@@ -39,18 +39,18 @@
 
 </div>
 <div class="h1">
-<h1>Pharmacy Sing Up</h1>
+<h1>Doctor Sing Up</h1>
 </div>
-<form method="POST" action="">
-<input type="text" placeholder="Name" name="name">
-<input type="text" placeholder="User Name" name="username">
-<input type="email" placeholder="Email" name="email">
-<input type="text" placeholder="NID Number" name="nid">
-<input type="text" placeholder="Phone Number" name="Phoneno">
-<input type="password" placeholder="Password" name="password">
+<form  method="POST" action="">
+<input type="text" placeholder="Dr Name" name="d_name" >
+<input type="text" placeholder="Govt. Reg-Number" name="d_reg">
+<input type="text" placeholder="Qualification  " name="Qualification">
+<input type="text" placeholder="Expertise " name="Expertise">
+<input type="text" placeholder="Organization " name="Organization">
+<input type="Email" placeholder="Email" name="Email">
+<input type="password" placeholder="Password" name="Password">
 <input type="password" placeholder="Re-Password" name="Re-Password">
-<input type="submit" value="Sing Up" name="button">
-
+ <input type="submit" name="button" value="Sing Up" >
 </form>
 
 <div class="footer">
@@ -58,19 +58,18 @@
 
 </div>
 </div>
-<?php 
+<?php  
 include "connection.php";
-
 if(isset($_POST['button'])){
-$name=$_POST['name'];
-$username=$_POST['username'];
-$email=$_POST['email'];
-$nid=$_POST['nid'];
-$Phoneno=$_POST['Phoneno'];
-$password=$_POST['password'];
+$name=$_POST['d_name'];
+$Reg_Number=$_POST['d_reg'];
+$Qualification=$_POST['Qualification'];
+$Expertise=$_POST['Expertise'];
+$Organization=$_POST['Organization'];
+$Email=$_POST['Email'];
+$password=$_POST['Password'];
 $Re_Password=$_POST['Re-Password'];
-$Hashing=hash('sha256', $_POST['password']);
-
+$Hashing=hash('sha256', $_POST['Password']);
 
 if($password<>$Re_Password ){
 		
@@ -78,10 +77,9 @@ if($password<>$Re_Password ){
 		
     
 	}
-
 else{
-		$query="insert into patient(name,username,email,nid,phone_no,Password)
-		values('$name','$username','$email','$nid','$Phoneno','$Hashing');";
+		$query="insert into doctor(name,RegNumber,Qualification,Expertise,Email,Organization,Password)
+		values('$name','$Reg_Number','$Qualification','$Expertise','$Organization','$Email','$Hashing');";
         $result = mysqli_query($connection,$query);
 
         if($result){
@@ -93,12 +91,13 @@ else{
 		echo "<script>window.alert('Problem')</script>";
 		
 		}
-
-
-}
+	}
 
 }
- ?>
+
+
+
+?>
 
 </body>
 

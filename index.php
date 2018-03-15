@@ -23,7 +23,7 @@
 
   <li><a href="index.php">HOME</a></li>
   <li><a href="#news">SERVICES</a></li>
-  <li><a href="user.php">LOG IN</a></li>
+  <li><a href="login.php">LOG IN</a></li>
 <li><a href="usersingup.php">SING UP</a></li>
 
   <li><a href="#about">ABOUT</a></li>

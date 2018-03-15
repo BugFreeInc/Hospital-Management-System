@@ -1,0 +1,201 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+.h1 {
+    background-color: #4267B2;
+    text-align: center;
+    font-size: 25px;
+	padding: 15px;
+}
+.user{
+	
+}
+button {
+
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+  
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    font-size: 20px;
+    font-family: times new roman;
+    margin-left: 500px;
+
+    margin-top: 20px;
+}
+
+.logo {
+    width: 100%;
+    height: 100px;
+}
+.l1 {
+    width: 100%;
+   height: 40px;
+   
+	background-color: #2B96CC;
+}
+.l2 {
+  width: 100%;
+height: 60px;
+background-color: white;
+
+
+}
+.l2 img {
+    margin-left: 100px;
+}
+
+.menuber {
+    width: 800px;
+    height: 50px;
+    background-color: white;
+	
+	margin-left: 100px;
+	float: right;
+margin-top: 10px;
+}
+#menu {
+    padding: 0;
+    margin: 0;
+    line-height: 40px;
+    float: left;
+	
+}
+#menu li {
+    list-style: none;
+    display: inline;
+	margin: 5px;
+}
+#menu a {
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    margin: 0px;
+    font-family: arial;
+    font-size:20px;
+}
+
+#menu a:hover {
+    color: blue;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+body {
+    background-image: url("532963888.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+.l1 strong {
+    margin-left: 100px;
+}
+.l1 p {
+    float: right;
+    margin-right: 80px;
+	margin-top: 10px;
+}
+.c2 {
+	margin-top:5px;
+    width: 100%;
+    height: 300px;
+	background-color:#E5F3FF;
+}
+.c21 {
+	
+    height: 300px;
+  width: 650px;
+  font-size: 30px;
+    float: right;
+}
+.c3 {
+		margin-top:5px;
+
+    width: 100%;
+    height: 300px;
+	background-color:#F7978B;
+}
+.c31 {
+	
+    height: 300px;
+  width: 650px;
+  font-size: 30px;
+    float: left;
+}
+.c3 img {
+    margin-left: 48px;
+}
+.c4 {
+		margin-top:5px;
+
+    width: 100%;
+    height: 300px;
+	background-color:#51CDF3;
+}
+.c41 {
+	
+    height: 300px;
+  width: 650px;
+  font-size: 30px;
+    float: right;
+}
+
+form {
+  
+    width: 350px;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 10px;
+}
+input[type=text],input[type=password],input[type=email],input[type=submit]{
+    padding: 10px;
+width: 350px;
+margin-top: 10px;
+font-size: 20px;
+border-radius: 5px;
+}
+.d2 {
+    height: 1000px;
+    width: 350px;
+    background-color: aqua;
+    margin-left: 20px;
+	float:left;
+}
+.d3 {
+    float: right;
+    background-color: navajowhite;
+    width: 978px;
+    height: 1000px;
+}
+.d4 {
+    text-align: center;
+    background-color: thistle;
+    height: 80px;
+}
+#doctorname{
+	text-align:center;
+}
+

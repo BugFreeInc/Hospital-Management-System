@@ -4,7 +4,7 @@
 <head>
 <title>Welcome To EPR System</title>
 
-<link rel="stylesheet" href="style.css" media="all" />
+<link rel="stylesheet" href="login.css" media="all" />
 </head>
 
 <div class="c1">
@@ -21,9 +21,9 @@
 
 <ul id="menu">
 
-   <li><a href="pf.php">HOME</a></li>
+   <li><a href="index.php">HOME</a></li>
   <li><a href="#news">SERVICES</a></li>
-  <li><a href="user.php">LOG IN</a></li>
+  <li><a href="login.php">LOG IN</a></li>
 <li><a href="usersingup.php">SING UP</a></li>
 
   <li><a href="#about">ABOUT</a></li>
@@ -44,9 +44,9 @@
 
 <div class="user">
 
-<a href="Doctorlogin.php"target="_blank"><button>Doctor</button></a>
-<a href="Pharmacylogin.php"target="_blank"><button>Pharmacy</button></a>
-<a href="Patientlogin.php"target="_blank"><button>Patient</button></a>
+<a href="Doctorlogin.php"><button>Doctor</button></a>
+<a href="Pharmacylogin.php"><button>Pharmacy</button></a>
+<a href="Patientlogin.php"><button>Patient</button></a>
 
 </div>
 </div>
