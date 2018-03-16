@@ -56,7 +56,7 @@
 
 <?php 
 include "connection.php";
-
+session_start();
 if(isset($_POST['button'])){
 
 
@@ -68,8 +68,13 @@ $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
 
 if($row['RegNumber']==$Reg_Number && $row['Password']==$password && $row['RegNumber']!=null){
+
+	 $_SESSION["Doctor_id"] = $row['RegNumber'];
+	 $_SESSION["Doctor_Qualification"] = $row['Qualification'];
+	 $_SESSION["Doctor_Name"] = $row['name'];
+
 	echo "<script>window.alert('Well Come ')</script>";
-	header("refresh:0;url=Doctorpage.php");
+	header("refresh:0;url=Doctorpage_1.php");
 	}
 	else{
 		echo "<script>window.alert('Password Mismatch Or You Account is not Created')</script>";
