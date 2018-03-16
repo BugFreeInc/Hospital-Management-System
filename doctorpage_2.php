@@ -1,7 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +15,7 @@
     <title>Doctor Page</title>
   </head>
   <body>
+<<<<<<< HEAD
     <?php  
    session_start();
    $Doctor_Name=$_SESSION["Doctor_Name"];
@@ -35,6 +39,8 @@ $row = mysqli_fetch_array($result);
 
 
    ?>
+=======
+>>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
    
 <div class=container>
 
@@ -61,12 +67,18 @@ $row = mysqli_fetch_array($result);
       </li>
       
     </ul>
+<<<<<<< HEAD
     <form method="" action="logout.php"><button type="submit" class="btn btn-light" name="logout">Log Out</button></form>
     
+=======
+    
+    <button type="button" class="btn btn-light" name="">Log Out</button>
+>>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
   </div>
   </nav>
 </div><!---mmanuber End-->
 <div class="Doctor_Name">
+<<<<<<< HEAD
   <h1><?php  echo $Doctor_Name;  ?></h1>
   <p><?php  echo $Doctor_id;  ?></p>
 <p><?php  echo $Doctor_Qualification;  ?></p>
@@ -77,6 +89,16 @@ $row = mysqli_fetch_array($result);
 echo "Today is " . date("Y/m/d") . "<br>";
 echo  date("l");
 ?></p>
+=======
+  <h1>Dr.abcd </h1>
+<p>MBBS,MD(Medicin)</p>
+<p>Govt.Reg:1234</p>
+<p>Medical offiser,SMC</p>
+</div>
+<div class="c2">
+<div class="Date">
+  <p>Current Date & Time</p>
+>>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
 </div>
 
 
@@ -84,7 +106,10 @@ echo  date("l");
  
   
   <tr align="center"><th colspan="4">Assign Medicis</th></tr>
+<<<<<<< HEAD
   <tr><th align="right" >Patient NID </th><td><input type="text" name="" size="35"></td></tr>
+=======
+>>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
   <tr><th align="right" >Medicin Name</th><td><input type="text" name="" size="35"></td></tr>
   <tr><th align="right">Doge Per Time</th><td><input type="text" name=""></td></tr>
   <tr><th>Time Day</th><td><select>
@@ -109,6 +134,7 @@ echo  date("l");
 
 <div class="slideber">
   <nav class="navbar navbar-light bg-light">
+<<<<<<< HEAD
   <form class="form-inline" method="POST">
     <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="button">Search</button>
@@ -128,6 +154,13 @@ if ($result) {
 }
 }
 ?>
+=======
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+>>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
 </div><!---slide_ber End-->
 
 </div>    <!---container End-->
@@ -143,5 +176,8 @@ if ($result) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
 </html>
