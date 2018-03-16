@@ -11,7 +11,6 @@
     <title>Doctor Page</title>
   </head>
   <body>
-<<<<<<< HEAD
    <?php  
    session_start();
    $Doctor_Name=$_SESSION["Doctor_Name"];
@@ -35,9 +34,6 @@ $row = mysqli_fetch_array($result);
 
 
    ?>
-=======
-   
->>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
 <div class=container>
 
 <div class="manuber">
@@ -60,7 +56,6 @@ $row = mysqli_fetch_array($result);
       </li>
       <li class="nav-item">
         <a class="nav-link" href="doctorpage_3.php">Patient History</a>
-<<<<<<< HEAD
 
       </li>
     </ul>
@@ -85,25 +80,6 @@ $row = mysqli_fetch_array($result);
 echo "Today is " . date("Y/m/d") . "<br>";
 echo  date("l");
 ?></p>
-=======
-      </li>
-      
-    </ul>
-    
-    <button type="button" class="btn btn-light" name="">Log Out</button>
-  </div>
-  </nav>
-</div><!---mmanuber End-->
-<div class="Doctor_Name">
-  <h1>Dr.abcd </h1>
-<p>MBBS,MD(Medicin)</p>
-<p>Govt.Reg:1234</p>
-<p>Medical offiser,SMC</p>
-</div>
-<div class="c2">
-<div class="Date">
-  <p>Current Date & Time</p>
->>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
 </div>
 
   <p>content area</p>
@@ -111,7 +87,6 @@ echo  date("l");
 
 <div class="slideber">
   <nav class="navbar navbar-light bg-light">
-<<<<<<< HEAD
   <form class="form-inline" method="POST">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="button">Search</button>
@@ -139,21 +114,11 @@ if ($result) {
 }
 ?>
 
-=======
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
->>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
 </div><!---slide_ber End-->
 
 </div>    <!---container End-->
 
-<<<<<<< HEAD
 </nav>
-=======
->>>>>>> 4733169a1be3bf1cba4b7bbfd3011239516847ba
 
 
 
