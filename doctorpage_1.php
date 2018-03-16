@@ -100,16 +100,17 @@ echo  date("l");
 
 </nav>
 <?php 
-
 if(isset($_POST['button'])){
 $nid=$_POST['search'];
 $query=("select * from patient where nid ='$nid' ");
 $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
-if ($result) {
-  echo "Patient Name :"." ".  $row["name"];
-  echo "<br>";
-  echo "Patient NID :"." ".  $row["nid"];
+if ($row['nid']==$nid &&$row['nid']!=null) {
+  echo "<h5>Patient Name : ".$row["name"]."</h5>" ;
+  echo "<h5>Patient NID : ".$row["nid"]."</h5>" ;
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
 }
 }
 ?>

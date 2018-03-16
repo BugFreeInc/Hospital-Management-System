@@ -79,32 +79,59 @@ echo  date("l");
 ?></p>
 </div>
 
-
+<form method="POST" action="">
   <table align="center" border="2" bgcolor="  #E6E6FA">
  
   
   <tr align="center"><th colspan="4">Assign Medicis</th></tr>
-  <tr><th align="right" >Patient NID </th><td><input type="text" name="" size="35"></td></tr>
-  <tr><th align="right" >Medicin Name</th><td><input type="text" name="" size="35"></td></tr>
-  <tr><th align="right">Doge Per Time</th><td><input type="text" name=""></td></tr>
-  <tr><th>Time Day</th><td><select>
+  <tr><th align="right" >Patient NID </th><td><input type="text" name="nid" size="35"></td></tr>
+  <tr><th align="right" >Medicin Name</th><td><input type="text" name="Medicin" size="35"></td></tr>
+  <tr><th align="right">Doge Per Day</th><td><input type="text" name="Doge"></td></tr>
+  <tr><th>Time in a Day</th><td><select name="inaday">
   <option >1 Time a day</option>
   <option >2 Time a day</option>
   <option>3 Time a day</option>
   <option>4 Time a day</option>
    </select>
    </td></tr>
-  <tr><th align="right">Duration(Days)</th><td><input type="text" name=""></td></tr>
-  <tr><th align="right">Befor/After Eat</th><td><select>
+  <tr><th align="right">Duration(Days)</th><td><input type="text" name="Duration"></td></tr>
+  <tr><th align="right">Befor/After Eat</th><td><select name="Eat">
   <option >After Eat</option>
   <option >Befor Eat</option>
 
    </select></td></tr>
-   <tr><th align="right">File Or Report</th><td><input type="File" name=""></td></tr>
-  <tr align="center"><th colspan="4"><input type="submit" name="" value="ADD"></th></tr>
+   <tr><th align="right">Disease Info</th><td><input type="text" name="file" size="35"></td></tr>
+  <tr align="center"><th colspan="4"><input type="submit" name="ADD" value="ADD"></th></tr>
   
   
 </table>
+</form>
+<?php 
+if(isset($_POST['ADD'])){
+$nid=$_POST['nid'];
+$Medicin=$_POST['Medicin'];
+$Doge=$_POST['Doge'];
+$inaday=$_POST['inaday'];
+$Duration=$_POST['Duration'];
+$Eat=$_POST['Eat'];
+$file=$_POST['file'];
+$date=date("Y/m/d");
+$DrName=$Doctor_Name;
+
+$query="insert into prescription(PatientNID,MedicinName,DogePerDay,TimeinaDay,Duration,BeforAfterEat,FileOrReport,Date,DrName)
+    values('$nid','$Medicin','$Doge','$inaday','$Duration','$Eat','$file','$date','$DrName');";
+        $result = mysqli_query($connection,$query);
+if($result){
+  echo "<script>window.alert('Data Added')</script>";
+  
+  }
+  else{
+         echo "<script>window.alert('Data not Added')</script>";
+  }
+
+
+}
+?>
 </div>
 
 <div class="slideber">
@@ -115,16 +142,17 @@ echo  date("l");
   </form>
 </nav>
 <?php 
-
 if(isset($_POST['button'])){
 $nid=$_POST['search'];
 $query=("select * from patient where nid ='$nid' ");
 $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
-if ($result) {
-  echo "Patient Name :"." ".  $row["name"];
-  echo "<br>";
-  echo "Patient NID :"." ".  $row["nid"];
+if ($row['nid']==$nid &&$row['nid']!=null) {
+  echo "<h5>Patient Name : ".$row["name"]."</h5>" ;
+  echo "<h5>Patient NID : ".$row["nid"]."</h5>" ;
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
 }
 }
 ?>

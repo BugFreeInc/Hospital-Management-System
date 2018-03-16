@@ -11,6 +11,29 @@
     <title>Doctor Page</title>
   </head>
   <body>
+    <?php  
+   session_start();
+   $Doctor_Name=$_SESSION["Doctor_Name"];
+   $Doctor_id=$_SESSION["Doctor_id"];
+   $Doctor_Qualification=$_SESSION["Doctor_Qualification"];
+   include "connection.php";
+
+$query=("select * from doctor where RegNumber='$Doctor_id' and name ='$Doctor_Name' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+
+
+  if($row['RegNumber']==$Doctor_id && $row['RegNumber']!=null){
+
+
+  }
+  else{
+
+    header("refresh:0;url=login.php");
+  }
+
+
+   ?>
    
 <div class=container>
 
@@ -37,20 +60,40 @@
       </li>
       
     </ul>
+    <form method="" action="logout.php"><button type="submit" class="btn btn-light" name="logout">Log Out</button></form>
     
-    <button type="button" class="btn btn-light" name="">Log Out</button>
   </div>
 </div><!---mmanuber End-->
 <div class="Doctor_Name">
-  <h1>Dr.abcd </h1>
-<p>MBBS,MD(Medicin)</p>
-<p>Govt.Reg:1234</p>
-<p>Medical offiser,SMC</p>
+  
+<h1><?php  echo $Doctor_Name;  ?></h1>
+  <p><?php  echo $Doctor_id;  ?></p>
+<p><?php  echo $Doctor_Qualification;  ?></p>
 </div>
 <div class="c2">
 
 <div class="history">
   <p>Patient History</p>
+  <?php 
+
+if(isset($_POST['button'])){
+$nid=$_POST['search'];
+$query=("select * from prescription where PatientNID ='$nid' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+if ($row['PatientNID']==$nid &&$row['PatientNID']!=null) {
+  echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
+  echo "<h5>Disease Info : ".$row["FileOrReport"]."</h5>" ;
+  echo "<h5>Prescripe By : ".$row["DrName"]."</h5>" ;
+  echo "<h5>Prescripe Date : ".$row["Date"]."</h5>" ;
+  echo "<h5>Medicin Name : ".$row["MedicinName"]."</h5>" ;
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
+}
+}
+?>
+
 </div>
 
  
@@ -58,11 +101,27 @@
 
 <div class="slideber">
   <nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  <form class="form-inline" method="POST">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="button">Search</button>
   </form>
 </nav>
+<?php 
+
+if(isset($_POST['button'])){
+$nid=$_POST['search'];
+$query=("select * from patient where nid ='$nid' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+if ($row['nid']==$nid &&$row['nid']!=null) {
+  echo "<h5>Patient Name : ".$row["name"]."</h5>" ;
+  echo "<h5>Patient NID : ".$row["nid"]."</h5>" ;
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
+}
+}
+?>
 </div><!---slide_ber End-->
 
 </div>    <!---container End-->
