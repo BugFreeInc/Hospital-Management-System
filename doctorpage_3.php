@@ -73,23 +73,37 @@ $row = mysqli_fetch_array($result);
 <div class="c2">
 
 <div class="history">
-  <p>Patient History</p>
+
+<h1>Patient History</h1>
   <?php 
 
 if(isset($_POST['button'])){
 $nid=$_POST['search'];
 $query=("select * from prescription where PatientNID ='$nid' ");
-$query1=("select * from prescription");
+$query1=("select * from prescription ");
 $result=mysqli_query($connection,$query);
 $result1=mysqli_query($connection,$query1);
 $row = mysqli_fetch_array($result);
+
 if ($row['PatientNID']==$nid &&$row['PatientNID']!=null) {
   while ($row = mysqli_fetch_array($result1)) {
-  echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
+  
+  /*echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
   echo "<h5>Disease Info : ".$row["FileOrReport"]."</h5>" ;
   echo "<h5>Prescripe By : ".$row["DrName"]."</h5>" ;
   echo "<h5>Prescripe Date : ".$row["Date"]."</h5>" ;
   echo "<h5>Medicin Name : ".$row["MedicinName"]."</h5>" ;
+
+  */
+
+  echo " <table border='2'>
+
+  <tr> <td>PID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicin Name</td></tr>
+   <tr> <td>".$row["PatientNID"]."</td><td>".$row["FileOrReport"]."</td> <td>".$row["DrName"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
+
+</table>
+<br>
+  ";
   }
   
 }
