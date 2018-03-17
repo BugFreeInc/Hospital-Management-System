@@ -11,6 +11,29 @@
     <title>Pharmacy Page</title>
   </head>
   <body>
+    <?php  
+   session_start();
+   $pharmacy_id=$_SESSION["pharmacy_id"] ;
+   $pharmacy_name=$_SESSION["pharmacy_name"];
+   $pharmacy_owner=$_SESSION["pharmacy_owner"];
+   include "connection.php";
+
+$query=("select * from pharmacy where RegNumber='$pharmacy_id' and name ='$pharmacy_name' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+
+
+  if($row['RegNumber']==$pharmacy_id && $row['RegNumber']!=null){
+
+
+  }
+  else{
+
+    header("refresh:0;url=login.php");
+  }
+
+
+   ?>
    
 <div class=container>
 
@@ -29,7 +52,7 @@
         <a class="nav-link" href="Pharma_1.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Pharma_2.php">Assing Prescribe</a>
+        <a class="nav-link" href="Pharma_2.php">Sell Medicine</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="Pharma_3.php">Sell  History</a>
@@ -46,10 +69,9 @@
 </div><!---mmanuber End-->
 <div class="pharma_Name">
 
-  <h1>Pharmacy  Name</h1>
-  <p>Govt Reg. Number <br>Owner name<br>Adress</p>
-<p></p>
-
+  <h1><?php  echo $pharmacy_name;  ?></h1>
+  <p><?php  echo $pharmacy_id;  ?></p>
+<p><?php  echo $pharmacy_owner;  ?></p>
 </div>
 <div class="c2">
 <div class="Date">
@@ -58,8 +80,44 @@ echo "Today is " . date("Y/m/d") . "<br>";
 echo  date("l");
 ?></p>
 </div>
+<center><h4>Prescription</h4></center>
+  
+  <?php 
 
-  <p>content area</p>
+if(isset($_POST['button'])){
+$nid=$_POST['search'];
+$query=("select * from prescription where PatientNID ='$nid' ");
+$query1=("select * from prescription ");
+$result=mysqli_query($connection,$query);
+
+
+if ($result) {
+  while ($row = mysqli_fetch_array($result)) {
+  
+  /*echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
+  echo "<h5>Disease Info : ".$row["FileOrReport"]."</h5>" ;
+  echo "<h5>Prescripe By : ".$row["DrName"]."</h5>" ;
+  echo "<h5>Prescripe Date : ".$row["Date"]."</h5>" ;
+  echo "<h5>Medicin Name : ".$row["MedicinName"]."</h5>" ;
+
+  */
+
+  echo " <table border='2'>
+
+  <tr> <td>PID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicin Name</td></tr>
+   <tr> <td>".$row["PatientNID"]."</td><td>".$row["FileOrReport"]."</td> <td>".$row["DrName"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
+
+</table>
+<br>
+ ";
+  }
+  
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
+}
+}
+?>
 </div>
 
 <div class="slideber">
@@ -72,7 +130,22 @@ echo  date("l");
   </form>
 
 </nav>
+<?php 
 
+if(isset($_POST['button'])){
+$nid=$_POST['search'];
+$query=("select * from patient where nid ='$nid' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+if ($row['nid']==$nid &&$row['nid']!=null) {
+  echo "<h5>Patient Name : ".$row["name"]."</h5>" ;
+  echo "<h5>Patient NID : ".$row["nid"]."</h5>" ;
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
+}
+}
+?>
 
 
 </div><!---slide_ber End-->

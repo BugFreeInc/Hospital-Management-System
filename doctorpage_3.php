@@ -83,10 +83,11 @@ $query=("select * from prescription where PatientNID ='$nid' ");
 $query1=("select * from prescription ");
 $result=mysqli_query($connection,$query);
 $result1=mysqli_query($connection,$query1);
-$row = mysqli_fetch_array($result);
+//$row = mysqli_fetch_array($result);
 
-if ($row['PatientNID']==$nid &&$row['PatientNID']!=null) {
-  while ($row = mysqli_fetch_array($result1)) {
+//if ($row['PatientNID']==$nid &&$row['PatientNID']!=null) {
+if ($result) {
+  while ($row = mysqli_fetch_array($result)) {
   
   /*echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
   echo "<h5>Disease Info : ".$row["FileOrReport"]."</h5>" ;

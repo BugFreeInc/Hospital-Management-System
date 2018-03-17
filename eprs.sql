@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2018 at 10:42 PM
+-- Generation Time: Mar 18, 2018 at 12:07 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -44,7 +44,8 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`id`, `name`, `RegNumber`, `Qualification`, `Expertise`, `Email`, `Organization`, `Password`) VALUES
-(10, 'Nahian', '111', 'bsc', 'php', 'diu', 'nahianahmedcse@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
+(10, 'Nahian', '111', 'bsc', 'php', 'diu', 'nahianahmedcse@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'),
+(11, 'Nahian Ahmed', '112', 'MBBS ', 'php', 'diu', 'nahianahmedcse@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,8 @@ CREATE TABLE `pharmacy` (
 --
 
 INSERT INTO `pharmacy` (`id`, `name`, `RegNumber`, `owner`, `address`, `Email`, `password`) VALUES
-(3, 'nahian', '111', 'nahian', 'dhaka', 'nahianahmedcse@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
+(3, 'nahian', '111', 'nahian', 'dhaka', 'nahianahmedcse@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'),
+(4, 'Bug Free Inc', '112', 'Nahian Ahmed', 'dhaka', 'nahianahmedcse@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
 
 -- --------------------------------------------------------
 
@@ -116,7 +118,36 @@ CREATE TABLE `prescription` (
 --
 
 INSERT INTO `prescription` (`id`, `PatientNID`, `MedicinName`, `DogePerDay`, `TimeinaDay`, `Duration`, `BeforAfterEat`, `FileOrReport`, `Date`, `DrName`) VALUES
-(2, '19965425404000057', 'Napa', 2, '2 Time a day', 3, 'Befor Eat', 'cold Fever ', '2018/03/16', 'Nahian');
+(2, '19965425404000057', 'Napa', 2, '2 Time a day', 3, 'Befor Eat', 'cold Fever ', '2018/03/16', 'Nahian'),
+(3, '19965425404000057', 'Napa Extra', 2, '2 Time a day', 3, 'After Eat', 'Fever ', '2018/03/17', 'Nahian'),
+(4, '123', 'Napa', 2, '1 Time a day', 3, 'After Eat', 'cold Fever ', '2018/03/17', 'Nahian Ahmed');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sell_history`
+--
+
+CREATE TABLE `sell_history` (
+  `id` int(11) NOT NULL,
+  `PatientNID` varchar(100) NOT NULL,
+  `pharma_id` varchar(100) NOT NULL,
+  `MedicineName` varchar(200) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `price` float NOT NULL,
+  `quantity` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sell_history`
+--
+
+INSERT INTO `sell_history` (`id`, `PatientNID`, `pharma_id`, `MedicineName`, `date`, `price`, `quantity`) VALUES
+(4, '19965425404000057', '111', 'Napa', '2018/03/17', 12, 6),
+(5, '123', '111', 'xyz', '2018/03/1', 10, 4),
+(6, '19965425404000057', '111', 'NapaEx', '2018/03/18', 12, 6),
+(7, '12345', '111', 'NapaExpo', '2018/03/17', 12, 6),
+(8, '12345', '112', 'nc', '2018/03/18', 56, 13);
 
 --
 -- Indexes for dumped tables
@@ -150,6 +181,12 @@ ALTER TABLE `prescription`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sell_history`
+--
+ALTER TABLE `sell_history`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -157,7 +194,7 @@ ALTER TABLE `prescription`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `patient`
@@ -169,13 +206,19 @@ ALTER TABLE `patient`
 -- AUTO_INCREMENT for table `pharmacy`
 --
 ALTER TABLE `pharmacy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `sell_history`
+--
+ALTER TABLE `sell_history`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

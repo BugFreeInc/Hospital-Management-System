@@ -54,7 +54,7 @@
 </div>
 </div>
 <?php  
-
+session_start();
 include "connection.php";
 if(isset($_POST['button'])){
 
@@ -67,7 +67,12 @@ $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
 
 if($row['RegNumber']==$Reg_Number && $row['password']==$password && $row['RegNumber']!=null){
+	$_SESSION["pharmacy_id"] = $row['RegNumber'];
+	 $_SESSION["pharmacy_name"] = $row['name'];
+	 $_SESSION["pharmacy_owner"] = $row['owner'];
+
 	echo "<script>window.alert('Well Come ')</script>";
+	header("refresh:0;url=Pharma_1.php");
 	}
 	else{
 		echo "<script>window.alert('Password Mismatch Or You Account is not Created')</script>";

@@ -11,7 +11,29 @@
     <title>Pharmacy Page</title>
   </head>
   <body>
-   
+   <?php  
+   session_start();
+   $pharmacy_id=$_SESSION["pharmacy_id"] ;
+   $pharmacy_name=$_SESSION["pharmacy_name"];
+   $pharmacy_owner=$_SESSION["pharmacy_owner"];
+   include "connection.php";
+
+$query=("select * from pharmacy where RegNumber='$pharmacy_id' and name ='$pharmacy_name' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+
+
+  if($row['RegNumber']==$pharmacy_id && $row['RegNumber']!=null){
+
+
+  }
+  else{
+
+    header("refresh:0;url=login.php");
+  }
+
+
+   ?>
 <div class=container>
 
 <div class="manuber">
@@ -29,7 +51,7 @@
         <a class="nav-link" href="Pharma_1.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Pharma_2.php">Assing Prescribe</a>
+        <a class="nav-link" href="Pharma_2.php">Sell Medicine</a>
       </li>
       <li class="nav-item">
        <a class="nav-link" href="Pharma_3.php">Sell  History</a>
@@ -46,28 +68,57 @@
 </div><!---mmanuber End-->
 <div class="pharma_Name">
 
-  <h1>Pharmacy  Name</h1>
-  <p>Govt Reg. Number <br>Owner name<br>Adress</p>
-<p></p>
+ 
+  <h1><?php  echo $pharmacy_name;  ?></h1>
+  <p><?php  echo $pharmacy_id;  ?></p>
+<p><?php  echo $pharmacy_owner;  ?></p>
 
 </div>
 <div class="c2">
-<!--<div class="Date">
+<div class="Date">
   <p><?php
 echo "Today is " . date("Y/m/d") . "<br>";
 echo  date("l");
 ?></p>
-</div>-->
-<p>content area</p>
-<!--<div class="c2_1">
-  <p>content area</p>
-  
 </div>
-<div class="c2_2">
-<p>content area2</p>
+<p>Check Buying Permission</p>
+<?php 
+
+if(isset($_POST['button'])){
+$nid=$_POST['search'];
+$query=("select * from prescription where PatientNID ='$nid' ");
+$query1=("select * from prescription ");
+$result=mysqli_query($connection,$query);
+$result1=mysqli_query($connection,$query1);
+
+if ($result) {
+  while ($row = mysqli_fetch_array($result)) {
+  $No_Dose=$row['DogePerDay']*$row['Duration'];
+  /*echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
+  echo "<h5>Disease Info : ".$row["FileOrReport"]."</h5>" ;
+  echo "<h5>Prescripe By : ".$row["DrName"]."</h5>" ;
+  echo "<h5>Prescripe Date : ".$row["Date"]."</h5>" ;
+  echo "<h5>Medicin Name : ".$row["MedicinName"]."</h5>" ;
+
+  */
+
+  echo " <table border='2'>
+
+  <tr> <td>PID</td><td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td><td>No. of Dose</td></tr>
+   <tr> <td>".$row["PatientNID"]."</td> <td>".$row["DrName"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td><td>".
+   $No_Dose."</td></tr>
+
+</table>
+<br>
+ ";
+  }
   
-</div>-->
-  
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
+}
+}
+?>
 </div>
 
 <div class="slideber">
@@ -80,28 +131,67 @@ echo  date("l");
   </form>
 
 </nav>
+<form method="POST" action="">
 <table align="center" border="2" bgcolor="  #E6E6FA">
  
   
-  <tr align="center"><th colspan="3">Assing Prescribe</th></tr>
-
-  <tr><th align="right" >Medicin Name</th><td><input type="text" name="" size="20"></td></tr>
-  <tr><th align="right">Quantity</th><td><input type="text" name=""></td></tr>
-   <tr><th align="right">Price</th><td><input type="text" name=""></td></tr>
+  <tr align="center"><th colspan="3">Assing Medicine</th></tr>
+  <tr><th align="right" >Patient NID</th><td><input type="text" name="PatientNID" size="20"></td></tr>
+  <tr><th align="right" >Medicine Name</th><td><input type="text" name="MedicineName" size="20"></td></tr>
+  <tr><th align="right">Quantity</th><td><input type="text" name="Quantity"></td></tr>
+   <tr><th align="right">Price</th><td><input type="text" name="Price"></td></tr>
   
   
-  <tr align="center"><th colspan="3"><input type="submit" name="" value="ADD"></th></tr>
+  <tr align="center"><th colspan="3"><input type="submit" name="ADD" value="ADD"></th></tr>
   
   
 </table>
+</form>
+<?php 
 
+if(isset($_POST['button'])){
+$nid=$_POST['search'];
+$query=("select * from patient where nid ='$nid' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+if ($row['nid']==$nid &&$row['nid']!=null) {
+  echo "<h5>Patient Name : ".$row["name"]."</h5>" ;
+  echo "<h5>Patient NID : ".$row["nid"]."</h5>" ;
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
+}
+}
+?>
 
 </div><!---slide_ber End-->
 
 </div>    <!---container End-->
 
 </nav>
+<?php 
+if(isset($_POST['ADD'])){
+$PatientNID=$_POST['PatientNID'];
+$MedicineName=$_POST['MedicineName'];
+$quantity=$_POST['Quantity'];
+$price=$_POST['Price'];
+$pharma_id=$pharmacy_id;
+$date=date("Y/m/d");
 
+$query="insert into sell_history(PatientNID, pharma_id, MedicineName , date , price, quantity)
+    values('$PatientNID','$pharma_id','$MedicineName','$date','$price','$quantity');";
+        $result = mysqli_query($connection,$query);
+if($result){
+  echo "<script>window.alert('Data Added')</script>";
+  
+  }
+  else{
+         echo "<script>window.alert('Data not Added')</script>";
+  }
+
+
+}
+?>
 
 
 
