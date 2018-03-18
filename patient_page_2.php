@@ -11,6 +11,30 @@
     <title>Pharmacy Page</title>
   </head>
   <body>
+    <?php  
+   session_start();
+   $nid=$_SESSION["p_nid"];
+   $name=$_SESSION["p_name"];
+   
+   include "connection.php";
+
+$query=("select * from patient where nid='$nid' and name ='$name' ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+
+
+  if($row['nid']==$nid && $row['nid']!=null){
+
+
+  }
+  else{
+
+    header("refresh:0;url=login.php");
+  }
+
+
+   ?>
+   
    
 <div class=container>
 
@@ -36,7 +60,6 @@
     </ul>
 
     <form method="POST" action="logout.php">
-       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="">Show Buy History</button>
       <button type="submit" class="btn btn-light" name="">Log Out</button>
     </form>
      
@@ -45,9 +68,9 @@
 </div><!---mmanuber End-->
 <div class="pharma_Name">
 
-  <h1>Patient  Name</h1>
-  <p>NID Number <br>Phone Number<br>Adress</p>
-<p></p>
+  <h1><?php  echo $name;  ?></h1>
+  <p><?php  echo $nid;  ?></p>
+
 
 </div>
 <div class="c2">
@@ -59,6 +82,38 @@ echo  date("l");
 </div>
 
   <p>content area</p>
+  <?php 
+$query=("select * from sell_history where PatientNID ='$nid' ");
+$result=mysqli_query($connection,$query);
+
+if ($result) {
+  while ($row = mysqli_fetch_array($result)) {
+  
+  /*echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
+  echo "<h5>Disease Info : ".$row["FileOrReport"]."</h5>" ;
+  echo "<h5>Prescripe By : ".$row["DrName"]."</h5>" ;
+  echo "<h5>Prescripe Date : ".$row["Date"]."</h5>" ;
+  echo "<h5>Medicin Name : ".$row["MedicinName"]."</h5>" ;
+
+  */
+
+  echo " <table border='2'>
+
+  <tr> <td>Pharmacy ID</td><td>Medicine Name</td><td>Date</td><td>Price(TK)</td><td>Quantity</td>
+  </tr>
+   <tr> <td>".$row["pharma_id"]."</td><td>".$row["MedicineName"]."</td> <td>".$row["date"]."</td><td>".$row["price"]."</td><td>".$row["quantity"]."</td></tr>
+
+</table>
+<br>
+ ";
+  }
+  
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
+}
+
+?>
 </div>
 
 <div class="slideber">
@@ -71,7 +126,43 @@ echo  date("l");
   </form>
 
 </nav>
+<?php 
+if(isset($_POST['button'])){
+$S_date=$_POST['search'];
+//$query=("select * from sell_history where pharma_id ='$pharmacy_id' ");
+$query1=("select * from sell_history where  PatientNID ='$nid' and date ='$S_date' ");
+//$result=mysqli_query($connection,$query);
+$result1=mysqli_query($connection,$query1);
+//$row = mysqli_fetch_array($result);
 
+if ($result1) {
+  while ($row = mysqli_fetch_array($result1)) {
+  
+  /*echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
+  echo "<h5>Disease Info : ".$row["FileOrReport"]."</h5>" ;
+  echo "<h5>Prescripe By : ".$row["DrName"]."</h5>" ;
+  echo "<h5>Prescripe Date : ".$row["Date"]."</h5>" ;
+  echo "<h5>Medicin Name : ".$row["MedicinName"]."</h5>" ;
+
+  */
+
+  echo " <table border='2'>
+
+  <tr> <td>Medicine Name</td><td>Date</td><td>Price(TK)</td><td>Quantity</td>
+  </tr>
+   <tr> <td>".$row["MedicineName"]."</td> <td>".$row["date"]."</td><td>".$row["price"]."</td><td>".$row["quantity"]."</td></tr>
+
+</table>
+<br>
+ ";
+  }
+  
+}
+else{
+  echo "<h6 >NO RECORD FOUND</h6>";
+}
+}
+?>
 
 
 </div><!---slide_ber End-->
