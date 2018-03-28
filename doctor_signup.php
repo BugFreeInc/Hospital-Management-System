@@ -42,14 +42,14 @@
 <h1>Doctor Sing Up</h1>
 </div>
 <form  method="POST" action="">
-<input type="text" placeholder="Dr Name" name="d_name" >
-<input type="text" placeholder="Govt. Reg-Number" name="d_reg">
-<input type="text" placeholder="Qualification  " name="Qualification">
+<input type="text" placeholder="Dr Name" name="d_name" required>
+<input type="text" placeholder="Govt. Reg-Number" name="d_reg" required>
+<input type="text" placeholder="Qualification  " name="Qualification" required>
 <input type="text" placeholder="Expertise " name="Expertise">
 <input type="text" placeholder="Organization " name="Organization">
-<input type="Email" placeholder="Email" name="Email">
-<input type="password" placeholder="Password" name="Password">
-<input type="password" placeholder="Re-Password" name="Re-Password">
+<input type="Email" placeholder="Email" name="Email" required>
+<input type="password" placeholder="Password" name="Password" required> 
+<input type="password" placeholder="Re-Password" name="Re-Password" required>
  <input type="submit" name="button" value="Sing Up" >
 </form>
 

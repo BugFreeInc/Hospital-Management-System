@@ -42,8 +42,8 @@
 <h1>Pharmacy Log In</h1>
 </div>
 <form method="POST" action="">
-<input type="text" placeholder="Reg-Number" name="Reg-Number">
-<input type="password" placeholder="Password" name="password">
+<input type="text" placeholder="Reg-Number" name="Reg-Number" required>
+<input type="password" placeholder="Password" name="password" required>
 <input type="submit" value="Log In" name="button">
 <p><a href="Forgetpassword_Pharma.php"><strong>Forget Password ?</strong></a></p>
 </form>

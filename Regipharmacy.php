@@ -43,13 +43,13 @@
 </div>
 <form method="POST" action="">
 <input type="text" placeholder="Pharmacy Name" name="p_name">
-<input type="text" placeholder="Govt. Reg-Number" name="p_reg">
+<input type="text" placeholder="Govt. Reg-Number" name="p_reg" required>
 <input type="text" placeholder="Owners Name" name="Owner_name">
 <input type="text" placeholder="Address " name="address">
 
-<input type="Email" placeholder="Email" name="Email">
-<input type="password" placeholder="Password" name="password">
-<input type="password" placeholder="Re-Password" name="Re-Password">
+<input type="Email" placeholder="Email" name="Email" required>
+<input type="password" placeholder="Password" name="password" required>
+<input type="password" placeholder="Re-Password" name="Re-Password" required>
 
 <input type="submit" value="Sing Up" name="button">
 </form>

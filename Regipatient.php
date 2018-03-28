@@ -43,12 +43,12 @@
 </div>
 <form method="POST" action="">
 <input type="text" placeholder="Name" name="name">
-<input type="text" placeholder="User Name" name="username">
-<input type="email" placeholder="Email" name="email">
-<input type="text" placeholder="NID Number" name="nid">
+<input type="text" placeholder="User Name" name="username" required>
+<input type="email" placeholder="Email" name="email" required>
+<input type="text" placeholder="NID Number" name="nid" required>
 <input type="text" placeholder="Phone Number" name="Phoneno">
-<input type="password" placeholder="Password" name="password">
-<input type="password" placeholder="Re-Password" name="Re-Password">
+<input type="password" placeholder="Password" name="password" required>
+<input type="password" placeholder="Re-Password" name="Re-Password" required>
 <input type="submit" value="Sing Up" name="button">
 
 </form>

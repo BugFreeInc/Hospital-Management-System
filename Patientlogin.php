@@ -42,8 +42,8 @@
 <h1>Patient Log In</h1>
 </div>
 <form method="POST" action="">
-<input type="text" placeholder="Patient NID" name="nid">
-<input type="password" placeholder="Password" name="password">
+<input type="text" placeholder="Patient NID" name="nid" required>
+<input type="password" placeholder="Password" name="password" required>
 <input type="submit" value="Log In" name="button">
 <p><a href="Forgetpassword_Patient.php"><strong>Forget Password ?</strong></a></p>
 </form>
