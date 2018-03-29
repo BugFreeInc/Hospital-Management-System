@@ -42,7 +42,7 @@
 <h1>Patient Log In</h1>
 </div>
 <form method="POST" action="">
-<input type="text" placeholder="Patient NID" name="nid" required>
+<input type="text" placeholder="Patient NID" name="pnid" required>
 <input type="password" placeholder="Password" name="password" required>
 <input type="submit" value="Log In" name="button">
 <p><a href="Forgetpassword_Patient.php"><strong>Forget Password ?</strong></a></p>
@@ -54,10 +54,11 @@
 </div>
 </div>
 <?php 
+session_start();
 include "connection.php";
 if(isset($_POST['button'])){
 
-$nid=$_POST['nid'];
+$nid=$_POST['pnid'];
 $password=hash('sha256', $_POST['password']);
 
 
@@ -67,7 +68,11 @@ $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
 
 if($row['nid']==$nid && $row['password']==$password && $row['nid']!=null){
+	$_SESSION["p_nid"] = $row['nid'];
+	 $_SESSION["p_name"] = $row['name'];
+	 
 	echo "<script>window.alert('Well Come ')</script>";
+	header("refresh:0;url=patient_page_1.php");
 	}
 	else{
 		echo "<script>window.alert('Password Mismatch Or You Account is not Created')</script>";
