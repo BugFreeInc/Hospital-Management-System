@@ -86,6 +86,7 @@ else{
 
         if($result){
 	echo "<script>window.alert('Your Account is ready please login')</script>";
+	 header("refresh:0;url=login.php");
 	
 	}
 	else{

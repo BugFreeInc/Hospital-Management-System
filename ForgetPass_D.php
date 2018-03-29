@@ -64,11 +64,11 @@ if (isset($_POST['button'])) {
    $_SESSION["email"] = $email;
      $_SESSION["Reg_Number"] = $Reg_Number;
 
- $query=("select * from doctor where RegNumber='$Reg_Number' and Email ='$email' ");
+ $query=("select * from doctor where RegNumber='$Reg_Number' and Organization ='$email' ");
 $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
 
-if($row['RegNumber']==$Reg_Number && $row['Email']==$email && $row['RegNumber']!=null){
+if($row['RegNumber']==$Reg_Number && $row['Organization']==$email && $row['RegNumber']!=null){
 	echo "<script>window.alert('Well Come ')</script>";
 	header("refresh:0;url=ForgetPass_D2.php");
 
