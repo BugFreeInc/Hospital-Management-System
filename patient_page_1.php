@@ -83,7 +83,7 @@ echo  date("l");
 ?></p>
 </div>
 
-  <p>content area</p>
+ 
   <?php 
 
 //if(isset($_POST['button'])){

@@ -81,7 +81,7 @@ echo  date("l");
 ?></p>
 </div>
 
-  <p>content area</p>
+
   <?php 
 $query=("select * from sell_history where PatientNID ='$nid' ");
 $result=mysqli_query($connection,$query);

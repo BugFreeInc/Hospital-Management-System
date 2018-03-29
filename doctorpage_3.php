@@ -67,7 +67,7 @@ $row = mysqli_fetch_array($result);
 <div class="Doctor_Name">
   
 <h1><?php  echo $Doctor_Name;  ?></h1>
-  <p><?php  echo $Doctor_id;  ?></p>
+  <p><?php  echo "Reg. No: ". $Doctor_id;  ?></p>
 <p><?php  echo $Doctor_Qualification;  ?></p>
 </div>
 <div class="c2">

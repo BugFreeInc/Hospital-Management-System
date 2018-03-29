@@ -68,7 +68,7 @@ $row = mysqli_fetch_array($result);
 </div><!---mmanuber End-->
 <div class="Doctor_Name">
   <h1><?php  echo $Doctor_Name;  ?></h1>
-  <p><?php  echo $Doctor_id;  ?></p>
+  <p><?php  echo "Reg. No:". $Doctor_id;  ?></p>
 <p><?php  echo $Doctor_Qualification;  ?></p>
 </div>
 <div class="c2">
@@ -84,9 +84,9 @@ echo  date("l");
  
   
   <tr align="center"><th colspan="4">Assign Medicis</th></tr>
-  <tr><th align="right" >Patient NID </th><td><input type="text" name="nid" size="35"></td></tr>
-  <tr><th align="right" >Medicin Name</th><td><input type="text" name="Medicin" size="35"></td></tr>
-  <tr><th align="right">Doge Per Day</th><td><input type="text" name="Doge"></td></tr>
+  <tr><th align="right" >Patient NID </th><td><input type="text" name="nid" size="35" required></td></tr>
+  <tr><th align="right" >Medicin Name</th><td><input type="text" name="Medicin" size="35" required></td></tr>
+  <tr><th align="right">Doge Per Day</th><td><input type="text" name="Doge" required></td></tr>
   <tr><th>Time in a Day</th><td><select name="inaday">
   <option >1 Time a day</option>
   <option >2 Time a day</option>
@@ -94,13 +94,13 @@ echo  date("l");
   <option>4 Time a day</option>
    </select>
    </td></tr>
-  <tr><th align="right">Duration(Days)</th><td><input type="text" name="Duration"></td></tr>
-  <tr><th align="right">Befor/After Eat</th><td><select name="Eat">
+  <tr><th align="right">Duration(Days)</th><td><input type="text" name="Duration" required></td></tr>
+  <tr><th align="right">Befor/After Eat</th><td><select name="Eat" required>
   <option >After Eat</option>
   <option >Befor Eat</option>
 
    </select></td></tr>
-   <tr><th align="right">Disease Info</th><td><input type="text" name="file" size="35"></td></tr>
+   <tr><th align="right">Disease Info</th><td><input type="text" name="file" size="35" required></td></tr>
   <tr align="center"><th colspan="4"><input type="submit" name="ADD" value="ADD"></th></tr>
   
   
