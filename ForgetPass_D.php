@@ -21,13 +21,13 @@
 
 <ul id="menu">
 
-   <li><a href="index.php">HOME</a></li>
-  <li><a href="#news">SERVICES</a></li>
+  <li><a href="index.php">HOME</a></li>
+  <li><a href="service.php">SERVICES</a></li>
   <li><a href="login.php">LOG IN</a></li>
 <li><a href="usersingup.php">SING UP</a></li>
 
-  <li><a href="#about">ABOUT</a></li>
-  <li><a href="#about">CONTACT</a></li>
+  <li><a href="about.php">ABOUT</a></li>
+  <li><a href="help.php">Help</a></li>
     
   
 </ul>

@@ -2,9 +2,9 @@
 <html>
 <body>
 <head>
-<title>Welcome To EPR System</title>
+<title>Welcome To EPRS</title>
 
-<link rel="stylesheet" href="login.css" media="all" />
+<link rel="stylesheet" href="index.css" media="all" />
 </head>
 
 <div class="c1">
@@ -36,21 +36,22 @@
 </div>
 
 </div>
+<div class="c1">
 
-<div class="contentarea">
-<div class="h1">
-<h1>Log In</h1>
-</div>
 
-<div class="user">
+<div class="s1">
+<h1><a href="www.mohfw.gov.bd"> Health Ministry of Bangladesh </a></h1>
 
-<a href="Doctorlogin.php"><button>Doctor</button></a>
-<a href="Pharmacylogin.php"><button>Pharmacy</button></a>
-<a href="Patientlogin.php"><button>Patient</button></a>
+<h1>The Ministry of Health and Family Welfare is an Bangladesh government ministry charged with health policy in Bangladesh. It is also responsible for all government programs relating to family planning in Bangladesh. The present minister is Mohammed Nasim. </h1>
+
 
 </div>
+
+
 </div>
-</div>
+<footer>
+         © Copyright 2018, All Rights Reserved by Bugfree
+      </footer>
 
 </body>
 
