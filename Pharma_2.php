@@ -136,10 +136,10 @@ else{
  
   
   <tr align="center"><th colspan="3">Assing Medicine</th></tr>
-  <tr><th align="right" >Patient NID</th><td><input type="text" name="PatientNID" size="20"></td></tr>
-  <tr><th align="right" >Medicine Name</th><td><input type="text" name="MedicineName" size="20"></td></tr>
-  <tr><th align="right">Quantity</th><td><input type="text" name="Quantity"></td></tr>
-   <tr><th align="right">Price</th><td><input type="text" name="Price"></td></tr>
+  <tr><th align="right" >Patient NID</th><td><input type="text" name="PatientNID" size="20" required></td></tr>
+  <tr><th align="right" >Medicine Name</th><td><input type="text" name="MedicineName" size="20" required></td></tr>
+  <tr><th align="right">Quantity</th><td><input type="text" name="Quantity" required></td></tr>
+   <tr><th align="right">Price</th><td><input type="text" name="Price" required></td></tr>
   
   
   <tr align="center"><th colspan="3"><input type="submit" name="ADD" value="ADD"></th></tr>
