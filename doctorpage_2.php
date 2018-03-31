@@ -86,33 +86,33 @@ echo  date("l");
     <th colspan="7">Assing Medicin</th>
    
   </tr>
-  <tr><th>Patient ID</th><th colspan="2"><input type="text" name="" size="35" required></th><th>Disease Info</th><th colspan="3"><input type="text" name="" size="45" required></th></tr>
-  <tr><th>Medicin 1</th><td><input type="text" name="" size="" required></td><th align="center">Dose Per Day</th><td><input type="text" name="" size="" required></td><td>
-  <select name="inaday">
+  <tr><th>Patient ID</th><th colspan="2"><input type="text" name="nid" size="35" required></th><th>Disease Info</th><th colspan="3"><input type="text" name="Disease_info" size="45" required></th></tr>
+  <tr><th>Medicin 1</th><td><input type="text" name="m1" size="" required></td><th align="center">Dose Per Day</th><td><input type="number" name="d1" size="" required></td><td>
+  <select name="e1">
   <option >After Eating</option>
   <option >Before Eating</option>
   
    </select>
    </td>
-   <th>Duration</th><td><input type="text" name="" size="" required></td></tr>
-<tr><th>Medicin 2</th><td><input type="text" name="" size="" ></td><th>Dose Per Day</th><td><input type="text" name="" size="" ></td><td><select name="inaday">
+   <th>Duration</th><td><input type="number" name="du1" size="" required></td></tr>
+<tr><th>Medicin 2</th><td><input type="text" name="m2" size="" ></td><th>Dose Per Day</th><td><input type="number" name="d2" size="" ></td><td><select name="e2">
     <option >After Eating</option>
   <option >Before Eating</option>
-   </select></td><th>Duration</th><td><input type="text" name="" size="" ></td></tr>
-  <tr><th>Medicin 3</th><td><input type="text" name="" size="" ></td><th>Dose Per Day</th><td><input type="text" name="" size="" ></td><td><select name="inaday">
+   </select></td><th>Duration</th><td><input type="number" name="du2" size="" ></td></tr>
+  <tr><th>Medicin 3</th><td><input type="text" name="m3" size="" ></td><th>Dose Per Day</th><td><input type="number" name="d3" size="" ></td><td><select name="e3">
     <option >After Eating</option>
   <option >Before Eating</option>
 
-   </select></td><th>Duration</th><td><input type="text" name="" size="" ></td></tr>
-  <tr><th>Medicin 4</th><td><input type="text" name="" size="" ></td><th>Dose Per Day</th><td><input type="text" name="" size="" ></td><td><select name="inaday">
+   </select></td><th>Duration</th><td><input type="number" name="du3" size="" ></td></tr>
+  <tr><th>Medicin 4</th><td><input type="text" name="m4" size="" ></td><th>Dose Per Day</th><td><input type="number" name="d4" size="" ></td><td><select name="e4">
     <option >After Eating</option>
   <option >Before Eating</option>
-   </select></td><th>Duration</th><td><input type="text" name="" size="" ></td></tr>
-  <tr><th>Medicin 5</th><td><input type="text" name="" size="" ></td><th>Dose Per Day</th><td><input type="text" name="" size="" ></td><td><select name="inaday">
+   </select></td><th>Duration</th><td><input type="number" name="du4" size="" ></td></tr>
+  <tr><th>Medicin 5</th><td><input type="text" name="m5" size="" ></td><th>Dose Per Day</th><td><input type="number" name="d5" size="" ></td><td><select name="e5">
     <option >After Eating</option>
   <option >Before Eating</option>
-   </select></td><th>Duration</th><td><input type="text" name="" size="" ></td></tr>
-  <tr><th>Description</th><th colspan="6"><input type="text" name="" size="111" ></th></tr>
+   </select></td><th>Duration</th><td><input type="number" name="du5" size="" ></td></tr>
+  <tr><th>Description</th><th colspan="6"><input type="text" name="Describtion" size="111" required></th></tr>
 
     <tr align="center"><th colspan="7"><input type="submit" name="ADD" value="ADD"></th></tr>
   
@@ -122,17 +122,86 @@ echo  date("l");
 <?php 
 if(isset($_POST['ADD'])){
 $nid=$_POST['nid'];
-$Medicin=$_POST['Medicin'];
-$Doge=$_POST['Doge'];
-$inaday=$_POST['inaday'];
-$Duration=$_POST['Duration'];
-$Eat=$_POST['Eat'];
-$file=$_POST['file'];
+$Disease_info=$_POST['Disease_info'];
+$Doctor_id=$Doctor_id;
+$Describtion=$_POST['Describtion'];
+$dname=$Doctor_Name;
 $date=date("Y/m/d");
-$DrName=$Doctor_Name;
 
-$query="insert into prescription(PatientNID,MedicinName,DogePerDay,TimeinaDay,Duration,BeforAfterEat,FileOrReport,Date,DrName)
-    values('$nid','$Medicin','$Doge','$inaday','$Duration','$Eat','$file','$date','$DrName');";
+$m1=$_POST['m1'];
+$d1=$_POST['d1'];
+$e1=$_POST['e1'];
+$du1=$_POST['du1'];
+
+$m2=$_POST['m2'];
+$d2=$_POST['d2'];
+$e2=$_POST['e2'];
+$du2=$_POST['du2'];
+
+$m3=$_POST['m3'];
+$d3=$_POST['d3'];
+$e3=$_POST['e3'];
+$du3=$_POST['du3'];
+
+$m4=$_POST['m4'];
+$d4=$_POST['d4'];
+$e4=$_POST['e4'];
+$du4=$_POST['du4'];
+
+$m5=$_POST['m5'];
+$d5=$_POST['d5'];
+$e5=$_POST['e5'];
+$du5=$_POST['du5'];
+
+$Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
+
+if($m2!=null){
+	$Medicin="";
+$Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
+$Medicin=$Medicin .$m2." perday ".$d2." Time and take ".$e2." for ".$du2." day. "."<br>";
+
+
+}
+if($m3!=null){
+$Medicin="";
+$Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
+$Medicin=$Medicin .$m2." perday ".$d2." Time and take ".$e2." for ".$du2." day. "."<br>";
+$Medicin=$Medicin .$m3." perday ".$d3." Time and take ".$e3." for ".$du3." day. "."<br>";
+
+
+}
+if($m4!=null){
+$Medicin="";
+$Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
+$Medicin=$Medicin .$m2." perday ".$d2." Time and take ".$e2." for ".$du2." day. "."<br>";
+$Medicin=$Medicin .$m3." perday ".$d3." Time and take ".$e3." for ".$du3." day. "."<br>";
+$Medicin=$Medicin .$m4." perday ".$d4." Time and take ".$e4." for ".$du4." day. "."<br>";
+
+
+
+}
+if($m4!=null){
+$Medicin="";
+$Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
+$Medicin=$Medicin .$m2." perday ".$d2." Time and take ".$e2." for ".$du2." day. "."<br>";
+$Medicin=$Medicin .$m3." perday ".$d3." Time and take ".$e3." for ".$du3." day. "."<br>";
+$Medicin=$Medicin .$m4." perday ".$d4." Time and take ".$e4." for ".$du4." day. "."<br>";
+$Medicin=$Medicin .$m5." perday ".$d5." Time and take ".$e5." for ".$du5." day. "."<br>";
+
+
+
+
+}
+
+
+
+
+
+//$Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. ";
+
+
+$query="insert into prescription(MedicinName,Disease_info,Date,Describtion,dname,DoctorID,PatientNID)
+    values('$Medicin','$Disease_info','$date','$Describtion','$dname','$Doctor_id','$nid');";
         $result = mysqli_query($connection,$query);
 if($result){
   echo "<script>window.alert('Data Added')</script>";

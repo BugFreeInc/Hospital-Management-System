@@ -108,8 +108,8 @@ if ($result) {
 
   echo " <table border='2'>
 
-  <tr> <td>PID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicin Name</td></tr>
-   <tr> <td>".$row["PatientNID"]."</td><td>".$row["FileOrReport"]."</td> <td>".$row["DrName"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
+  <tr> <td>Patient's NID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td></tr>
+   <tr> <td>".$row["PatientNID"]."</td><td>".$row["Disease_info"]."</td> <td>".$row["dname"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
 
 </table>
 <br>
@@ -160,7 +160,7 @@ if ($result) {
   echo " <table border='2'>
 
   <tr><td>Disease Info</td> <td>Prescripe By</td><td>Medicin Name</td></tr>
-   <tr><td>".$row["FileOrReport"]."</td> <td>".$row["DrName"]."</td><td>".$row["MedicinName"]."</td></tr>
+   <tr><td>".$row["Disease_info"]."</td> <td>".$row["dname"]."</td><td>".$row["MedicinName"]."</td></tr>
 
 </table>
 <br>

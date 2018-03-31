@@ -90,10 +90,12 @@ $query=("select * from prescription where PatientNID ='$nid' ");
 $query1=("select * from prescription ");
 $result=mysqli_query($connection,$query);
 $result1=mysqli_query($connection,$query1);
+//$row = mysqli_fetch_array($result);
 
+//if ($row['PatientNID']==$nid &&$row['PatientNID']!=null) {
 if ($result) {
   while ($row = mysqli_fetch_array($result)) {
-  $No_Dose=$row['DogePerDay']*$row['Duration'];
+  
   /*echo "<h5>Patient NID : ".$row["PatientNID"]."</h5>" ;
   echo "<h5>Disease Info : ".$row["FileOrReport"]."</h5>" ;
   echo "<h5>Prescripe By : ".$row["DrName"]."</h5>" ;
@@ -104,13 +106,12 @@ if ($result) {
 
   echo " <table border='2'>
 
-  <tr> <td>PID</td><td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td><td>No. of Dose</td></tr>
-   <tr> <td>".$row["PatientNID"]."</td> <td>".$row["DrName"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td><td>".
-   $No_Dose."</td></tr>
+  <tr> <td>Patient's NID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td></tr>
+   <tr> <td>".$row["PatientNID"]."</td><td>".$row["Disease_info"]."</td> <td>".$row["dname"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
 
 </table>
 <br>
- ";
+  ";
   }
   
 }
@@ -178,7 +179,7 @@ $price=$_POST['Price'];
 $pharma_id=$pharmacy_id;
 $date=date("Y/m/d");
 
-$query="insert into sell_history(PatientNID, pharma_id, MedicineName , date , price, quantity)
+$query="insert into sell_history(PatientNID,  pharma_id, MedicinName , date , price, quantity)
     values('$PatientNID','$pharma_id','$MedicineName','$date','$price','$quantity');";
         $result = mysqli_query($connection,$query);
 if($result){

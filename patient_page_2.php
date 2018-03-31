@@ -101,7 +101,7 @@ if ($result) {
 
   <tr> <td>Pharmacy ID</td><td>Medicine Name</td><td>Date</td><td>Price(TK)</td><td>Quantity</td>
   </tr>
-   <tr> <td>".$row["pharma_id"]."</td><td>".$row["MedicineName"]."</td> <td>".$row["date"]."</td><td>".$row["price"]."</td><td>".$row["quantity"]."</td></tr>
+   <tr> <td>".$row["pharma_id"]."</td><td>".$row["MedicinName"]."</td> <td>".$row["date"]."</td><td>".$row["price"]."</td><td>".$row["quantity"]."</td></tr>
 
 </table>
 <br>
