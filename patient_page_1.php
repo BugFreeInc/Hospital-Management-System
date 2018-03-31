@@ -60,6 +60,9 @@ $row = mysqli_fetch_array($result);
       </li>
     </ul>
 
+ <form method="POST" action="a.php">
+      <button type="submit" class="btn btn-light" name="">Print Prescription</button>
+    </form>
     <form method="POST" action="logout.php">
       
       <button type="submit" class="btn btn-light" name="">Log Out</button>

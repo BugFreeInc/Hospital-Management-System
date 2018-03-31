@@ -183,4 +183,42 @@ border-radius: 5px;
 #doctorname{
 	text-align:center;
 }
+.a1 {
+    height: 100px;
+    width: 1000px;
+ 
+    /* justify-content: center; */
+    background-color: gainsboro;
+    margin-left: 150px;
+}
+.a1_1 {
+    width: 500px;
+    /* justify-content: center; */
+    /* background-color: gainsboro; */
+    /* margin-left: 150px; */
+    height: 100px;
+    float: left;
+}
+.a1_2 {
+    /* height: 100px; */
+    /* width: 1000px; */
+    /* justify-content: center; */
+    /* background-color: gainsboro; */
+    /* margin-left: 150px; */
+    width: 500px;
+    /* justify-content: center; */
+    /* background-color: gainsboro; */
+    /* margin-left: 150px; */
+    height: 100px;
+    float: right;
+    text-align: right;
+}
+
+.a2 {
+    height: 100%;
+    width: 1000px;
+    /* justify-content: center; */
+    background-color: navajowhite;
+    margin-left: 150px;
+}
 
