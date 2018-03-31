@@ -82,26 +82,39 @@ echo  date("l");
 <form method="POST" action="">
   <table align="center" border="2" bgcolor="  #E6E6FA">
  
+<tr align="center">
+    <th colspan="7">Assing Medicin</th>
+   
+  </tr>
+  <tr><th>Patient ID</th><th colspan="2"><input type="text" name="" size="35" required></th><th>Disease Info</th><th colspan="3"><input type="text" name="" size="45" required></th></tr>
+  <tr><th>Medicin 1</th><td><input type="text" name="" size="" required></td><th align="center">Dose Per Day</th><td><input type="text" name="" size="" required></td><td>
+  <select name="inaday">
+  <option >After Eating</option>
+  <option >Before Eating</option>
   
-  <tr align="center"><th colspan="4">Assign Medicis</th></tr>
-  <tr><th align="right" >Patient NID </th><td><input type="text" name="nid" size="35" required></td></tr>
-  <tr><th align="right" >Medicin Name</th><td><input type="text" name="Medicin" size="35" required></td></tr>
-  <tr><th align="right">Doge Per Day</th><td><input type="text" name="Doge" required></td></tr>
-  <tr><th>Time in a Day</th><td><select name="inaday">
-  <option >1 Time a day</option>
-  <option >2 Time a day</option>
-  <option>3 Time a day</option>
-  <option>4 Time a day</option>
    </select>
-   </td></tr>
-  <tr><th align="right">Duration(Days)</th><td><input type="text" name="Duration" required></td></tr>
-  <tr><th align="right">Befor/After Eat</th><td><select name="Eat" required>
-  <option >After Eat</option>
-  <option >Befor Eat</option>
+   </td>
+   <th>Duration</th><td><input type="text" name="" size="" required></td></tr>
+<tr><th>Medicin 2</th><td><input type="text" name="" size="" ></td><th>Dose Per Day</th><td><input type="text" name="" size="" ></td><td><select name="inaday">
+    <option >After Eating</option>
+  <option >Before Eating</option>
+   </select></td><th>Duration</th><td><input type="text" name="" size="" ></td></tr>
+  <tr><th>Medicin 3</th><td><input type="text" name="" size="" ></td><th>Dose Per Day</th><td><input type="text" name="" size="" ></td><td><select name="inaday">
+    <option >After Eating</option>
+  <option >Before Eating</option>
 
-   </select></td></tr>
-   <tr><th align="right">Disease Info</th><td><input type="text" name="file" size="35" required></td></tr>
-  <tr align="center"><th colspan="4"><input type="submit" name="ADD" value="ADD"></th></tr>
+   </select></td><th>Duration</th><td><input type="text" name="" size="" ></td></tr>
+  <tr><th>Medicin 4</th><td><input type="text" name="" size="" ></td><th>Dose Per Day</th><td><input type="text" name="" size="" ></td><td><select name="inaday">
+    <option >After Eating</option>
+  <option >Before Eating</option>
+   </select></td><th>Duration</th><td><input type="text" name="" size="" ></td></tr>
+  <tr><th>Medicin 5</th><td><input type="text" name="" size="" ></td><th>Dose Per Day</th><td><input type="text" name="" size="" ></td><td><select name="inaday">
+    <option >After Eating</option>
+  <option >Before Eating</option>
+   </select></td><th>Duration</th><td><input type="text" name="" size="" ></td></tr>
+  <tr><th>Description</th><th colspan="6"><input type="text" name="" size="111" ></th></tr>
+
+    <tr align="center"><th colspan="7"><input type="submit" name="ADD" value="ADD"></th></tr>
   
   
 </table>

@@ -12,7 +12,7 @@ body {
 }
 .slideber {
     width: 31%;
-    height: 80%;
+    height: 200px;
     margin-top: 10px;
     background-color: #F0E68C;
 }
@@ -26,7 +26,7 @@ background-color: #F0E68C;
 }
 .c2 {
     float: right;
-    width: 69%;
+    width:100%;
     height: 100%;
     background-color: #AFEEEE;
 }
