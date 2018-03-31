@@ -75,7 +75,7 @@ $row = mysqli_fetch_array($result);
 
 
 </div>
-<div class="c2">
+<div class="c2_pharma">
 <div class="Date">
   <p><?php
 echo "Today is " . date("Y/m/d") . "<br>";
@@ -124,7 +124,7 @@ else{
 ?>
 </div>
 
-<div class="slideber">
+<div class="slideber_pharma">
   <nav class="navbar navbar-light bg-light">
   <form class="form-inline" method="POST">
    <input class="form-control mr-sm-2" type="search" placeholder="Prescription  History" aria-label="Search" name="search">

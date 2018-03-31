@@ -73,7 +73,7 @@ $row = mysqli_fetch_array($result);
 
 
 </div>
-<div class="c2">
+<div class="c2_pharma">
 <div class="Date">
   <p><?php
 echo "Today is " . date("Y/m/d") . "<br>";
@@ -116,7 +116,7 @@ else{
 ?>
 </div>
 
-<div class="slideber">
+<div class="slideber_pharma">
   <nav class="navbar navbar-light bg-light">
   <form class="form-inline" method="POST">
     <input class="form-control mr-sm-2" type="search" placeholder="Search Buy History" aria-label="Search" name="search">
@@ -150,7 +150,7 @@ if ($result1) {
 
   <tr> <td>Medicine Name</td><td>Date</td><td>Price(TK)</td><td>Quantity</td>
   </tr>
-   <tr> <td>".$row["MedicineName"]."</td> <td>".$row["date"]."</td><td>".$row["price"]."</td><td>".$row["quantity"]."</td></tr>
+   <tr> <td>".$row["MedicinName"]."</td> <td>".$row["date"]."</td><td>".$row["price"]."</td><td>".$row["quantity"]."</td></tr>
 
 </table>
 <br>

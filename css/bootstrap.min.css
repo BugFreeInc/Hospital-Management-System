@@ -68,3 +68,15 @@ float: right;
 height: 200px;
 background-color: 
 }
+.slideber_pharma {
+    width: 31%;
+    height: 100%
+    margin-top: 10px;
+    background-color: #F0E68C;
+}
+.c2_pharma {
+    float: right;
+    width:69%;
+    height: 100%;
+    background-color: #AFEEEE;
+}
