@@ -155,14 +155,14 @@ $du5=$_POST['du5'];
 
 $Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
 
-if($m2!=null){
+if($du2!=null){
 	$Medicin="";
 $Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
 $Medicin=$Medicin .$m2." perday ".$d2." Time and take ".$e2." for ".$du2." day. "."<br>";
 
 
 }
-if($m3!=null){
+if($du3!=null){
 $Medicin="";
 $Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
 $Medicin=$Medicin .$m2." perday ".$d2." Time and take ".$e2." for ".$du2." day. "."<br>";
@@ -170,7 +170,7 @@ $Medicin=$Medicin .$m3." perday ".$d3." Time and take ".$e3." for ".$du3." day. 
 
 
 }
-if($m4!=null){
+if($du4!=null){
 $Medicin="";
 $Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
 $Medicin=$Medicin .$m2." perday ".$d2." Time and take ".$e2." for ".$du2." day. "."<br>";
@@ -180,7 +180,7 @@ $Medicin=$Medicin .$m4." perday ".$d4." Time and take ".$e4." for ".$du4." day. 
 
 
 }
-if($m4!=null){
+if($du4!=null){
 $Medicin="";
 $Medicin=$m1." perday ".$d1." Time and take ".$e1." for ".$du1." day. "."<br>";
 $Medicin=$Medicin .$m2." perday ".$d2." Time and take ".$e2." for ".$du2." day. "."<br>";
