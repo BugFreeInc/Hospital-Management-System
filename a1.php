@@ -7,13 +7,25 @@
 	<?php  
    session_start();
 $nid=$_SESSION["a_nid"];
-$d_name=$_SESSION["Doctor_Name"];
    ?>
 
 <div class="a1">
 
 <div class="a1_1">
-<h1>Dr. Name : <?php echo $_SESSION["Doctor_Name"];  ?> </h1>
+<h1>
+
+  <?php 
+include 'connection.php';
+if(isset($_POST['button'])){
+  $select=$_POST['select'];
+  $query=("select * from prescription where pid ='$select'");
+//$query1=("select * from prescription ");
+$result=mysqli_query($connection,$query);
+$row = mysqli_fetch_array($result);
+$d_name=$row["dname"];
+  echo"DR. Name ".$d_name; }
+
+  ?> </h1>
 
 </div>
 <div class="a1_2">
@@ -31,7 +43,7 @@ $d_name=$_SESSION["Doctor_Name"];
 
 <?php 
 include 'connection.php';
-$query=("select * from prescription where PatientNID ='$nid' and dname='$d_name'");
+$query=("select * from prescription where PatientNID ='$nid'");
 $result=mysqli_query($connection,$query);
 
 while ($row = mysqli_fetch_array($result)) {
@@ -61,8 +73,9 @@ $query=("select * from prescription where pid ='$select'");
 //$query1=("select * from prescription ");
 $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
-
+$d_name=$row["dname"];
 if ($result) {
+
 	echo " <table border='2'>
 
   <tr> <td>Pres. ID</td>  <td>Patient's NID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td></tr>

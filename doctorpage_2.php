@@ -61,9 +61,7 @@ $row = mysqli_fetch_array($result);
       </li>
       
     </ul>
-     <form method="POST" action="a.php">
-      <button type="submit" class="btn btn-light" name="">Print Prescription</button>
-    </form>
+    
     <form method="" action="logout.php"><button type="submit" class="btn btn-light" name="logout">Log Out</button></form>
     
   </div>
@@ -229,7 +227,7 @@ if($result){
 <?php 
 if(isset($_POST['button'])){
 $nid=$_POST['search'];
-$query=("select * from patient where nid ='$nid' ");
+$query=("select * from patient where nid ='$nid'");
 $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
 if ($row['nid']==$nid &&$row['nid']!=null) {

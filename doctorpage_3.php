@@ -60,9 +60,14 @@ $row = mysqli_fetch_array($result);
       </li>
       
     </ul>
-     <form method="POST" action="a.php">
-      <button type="submit" class="btn btn-light" name="">Print Prescription</button>
-    </form>
+    <a  class="btn btn-light" name=""   href="a.php" target="_blank"  > 
+<?php 
+
+if(isset($_POST['button'])){
+  echo"Print Prescription"; }?>
+</a>
+   
+    
     <form method="" action="logout.php"><button type="submit" class="btn btn-light" name="logout">Log Out</button></form>
     
   </div>
@@ -102,8 +107,8 @@ if ($result) {
 
   echo " <table border='2'>
 
-  <tr> <td>Patient's NID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td></tr>
-   <tr> <td>".$row["PatientNID"]."</td><td>".$row["Disease_info"]."</td> <td>".$row["dname"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
+  <tr> <td>Pres. ID</td>  <td>Patient's NID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td></tr>
+   <tr>  <td>".$row["pid"]."</td> <td>".$row["PatientNID"]."</td><td>".$row["Disease_info"]."</td> <td>".$row["dname"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
 
 </table>
 <br>
@@ -137,14 +142,21 @@ $query=("select * from patient where nid ='$nid' ");
 $result=mysqli_query($connection,$query);
 $row = mysqli_fetch_array($result);
 if ($row['nid']==$nid &&$row['nid']!=null) {
+
+$_SESSION['a_name'] =$row["name"]; 
+$_SESSION['a_nid'] =$row["nid"]; 
   echo "<h5>Patient Name : ".$row["name"]."</h5>" ;
   echo "<h5>Patient NID : ".$row["nid"]."</h5>" ;
+
+
+ 
 }
 else{
   echo "<h6 >NO RECORD FOUND</h6>";
 }
 }
 ?>
+
 </div><!---slide_ber End-->
 
 </div>    <!---container End-->

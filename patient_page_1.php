@@ -16,6 +16,8 @@
    session_start();
    $nid=$_SESSION["p_nid"];
    $name=$_SESSION["p_name"];
+   $_SESSION['a_name'] =$name;
+$_SESSION['a_nid'] =$nid; 
    
    include "connection.php";
 
@@ -60,9 +62,12 @@ $row = mysqli_fetch_array($result);
       </li>
     </ul>
 
- <form method="POST" action="a.php">
-      <button type="submit" class="btn btn-light" name="">Print Prescription</button>
-    </form>
+ <a  class="btn btn-light" name=""   href="a1.php" target="_blank"  > 
+<?php 
+
+
+  echo"Print Prescription"; ?>
+</a>
     <form method="POST" action="logout.php">
       
       <button type="submit" class="btn btn-light" name="">Log Out</button>
@@ -111,8 +116,8 @@ if ($result) {
 
   echo " <table border='2'>
 
-  <tr> <td>Patient's NID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td></tr>
-   <tr> <td>".$row["PatientNID"]."</td><td>".$row["Disease_info"]."</td> <td>".$row["dname"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
+  <tr> <td>Pres. ID</td>  <td>Patient's NID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td></tr>
+   <tr>  <td>".$row["pid"]."</td> <td>".$row["PatientNID"]."</td><td>".$row["Disease_info"]."</td> <td>".$row["dname"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
 
 </table>
 <br>

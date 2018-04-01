@@ -15,6 +15,9 @@
    session_start();
    $nid=$_SESSION["p_nid"];
    $name=$_SESSION["p_name"];
+
+   $_SESSION['a_name'] =$name;
+$_SESSION['a_nid'] =$nid; 
    
    include "connection.php";
 
@@ -58,9 +61,12 @@ $row = mysqli_fetch_array($result);
 
       </li>
     </ul>
- <form method="POST" action="a.php">
-      <button type="submit" class="btn btn-light" name="">Print Prescription</button>
-    </form>
+ <a  class="btn btn-light" name=""   href="a1.php" target="_blank"  > 
+<?php 
+
+
+  echo"Print Prescription"; ?>
+</a>
     <form method="POST" action="logout.php">
       <button type="submit" class="btn btn-light" name="">Log Out</button>
     </form>
