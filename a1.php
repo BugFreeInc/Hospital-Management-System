@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="style3.css">
 </head>
 <body>
+<div id="HTMLtoPDF">
 	<?php  
    session_start();
 $nid=$_SESSION["a_nid"];
@@ -62,6 +63,10 @@ while ($row = mysqli_fetch_array($result)) {
 
 	<input type="submit" name="button" value="view">
 </form>
+<form>
+    <input type=button name=print value="Print" onClick="window.print()">
+</form>
+
 </div>
 </div>
 <div class="a2">
@@ -78,8 +83,8 @@ if ($result) {
 
 	echo " <table border='2'>
 
-  <tr> <td>Pres. ID</td>  <td>Patient's NID</td><td>Disease Info</td> <td>Prescripe By</td><td>Prescripe Date</td><td>Medicine Name</td></tr>
-   <tr>  <td>".$row["pid"]."</td> <td>".$row["PatientNID"]."</td><td>".$row["Disease_info"]."</td> <td>".$row["dname"]."</td><td>".$row["Date"]."</td><td>".$row["MedicinName"]."</td></tr>
+  <tr> <td>Pres.ID ..</td>  <td>Disease Info ..</td> <td>Prescripe Date ..</td><td>Medicine Name</td></tr>
+   <tr>  <td>".$row["pid"]."   "."</td> <td>".$row["Disease_info"]."   "."</td><td>".$row["Date"]."   "."</td><td>".$row["MedicinName"]."</td></tr>
 
 </table>
 <br>
@@ -99,5 +104,12 @@ if ($result) {
   
 </table>
 
+</div>
+
+<a href="#" onclick="HTMLtoPDF()">Download PDF</a>
+<!-- these js files are used for making PDF -->
+	<script src="js/jspdf.js"></script>
+	<script src="js/jquery-2.1.3.js"></script>
+	<script src="js/pdfFromHTML.js"></script>
 </body>
 </html>
